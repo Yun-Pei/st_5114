@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="icon" href="image/ss_icon.png" type="image/x-icon"/>
+    
+</head>
+<body>
+    <nav class="navbar">
+        <p class="logo"><a href="home.html">Sun·Hope🦈🦁</a></p>
+        <button class="toggle-button" aria-label="Toggle Navigation">
+          ☰
+        </button>
+        <ul class="nav-links">
+            <li><a href="home.html">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="cq.html">Chuqin</a></li>
+            <!-- <li><a href="ss.html">Shasha</a></li> -->
+            <li><a href="mixed.html">mixed doubles</a></li>
+        </ul>
+    </nav>
+    
+</body>
+</html>
+
+<style>
+    html{
+        height: 100%
+    }
+    footer{
+        /* position: absolute; */
+        bottom: 0;
+        color: white;
+        background-color: #830b0b;
+        margin-top: 5vh;
+        width: 100%;
+        text-align: center;
+        padding: 1vh;
+    }
+    body{
+        margin: 0px;
+        padding: 0px;
+        background-color: white;
+        /* #f0eeee */
+        /* #d1cdc5 */
+        display: grid;
+        grid-template-rows: 1fr auto; /* 第一行占据剩余空间，第二行（footer）根据内容自适应 */
+        /* min-height: 100vh; 确保页面最小高度为视口高度 */
+        margin: 0; /* 清除默认的页面边距 */
+    }
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #830b0b;
+    /* #b99b9b */
+    padding: 0.5rem 1rem;
+    color: white;
+    height: 10vh;
+    }
+
+    .navbar .logo {
+        font-size: 4vw;
+        font-weight: bold;
+    }
+
+    .navbar .logo a{
+        text-decoration: none;
+        color: white;
+    }
+
+    .navbar .toggle-button {
+    display: none;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+    }
+
+    .navbar .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+    font-size: 3vh;
+    }
+
+    .navbar .nav-links a {
+    text-decoration: none;
+    color: white;
+    padding: 0.5rem 1rem;
+    transition: background-color 0.3s ease;
+    }
+
+    .navbar .nav-links a:hover {
+    background-color: #575757;
+    border-radius: 4px;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+    .navbar .toggle-button {
+        display: block;
+    }
+
+    .navbar .nav-links {
+        flex-direction: column;
+        display: none;
+        width: 100%;
+        text-align: center;
+        background-color: #333;
+    }
+
+    .navbar .nav-links.active {
+        display: flex;
+    }
+
+    .navbar .nav-links a {
+        padding: 1rem;
+    }
+    }
+</style>
+
+<script>
+    // JavaScript for toggling menu
+    const toggleButton = document.querySelector('.toggle-button');
+    const navLinks = document.querySelector('.nav-links');
+
+    toggleButton.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+    });
+</script>
